@@ -10,13 +10,13 @@ var gulp = require("gulp"),
 function style() {
     return (
         gulp
-            .src('./sass/**/*.scss')
+            .src('./style.scss')
             .pipe(sourcemaps.init())
             .pipe(sass())
             .on("error", sass.logError)
             .pipe(postcss([ autoprefixer(), cssnano() ])) 
             .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest('./css/'))
+            .pipe(gulp.dest('./'))
             // Add browsersync stream pipe after compilation
             .pipe(browserSync.stream())
     );
@@ -45,7 +45,7 @@ function watch() {
 
     });
 
-    gulp.watch("./sass/**/*.scss", style);
+    gulp.watch("./style.scss", style);
 }
 
 exports.style = style;
