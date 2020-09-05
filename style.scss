@@ -7,6 +7,8 @@ $lightblue: hsl(210, 46%, 95%);
 
 $white: #ffffff;
 
+$radius: 10px;
+
 * {
 	font-size: 13px;
 	box-sizing: border-box;
@@ -56,9 +58,8 @@ img {
   flex-direction: row;
   flex-wrap: no-wrap;
   align-items: stretch;
-  border-radius: 7px;
+  border-radius: $radius;
   background: $white;
-  overflow: hidden;
 }
 
 .image {
@@ -66,6 +67,8 @@ img {
   background: url(images/drawers.jpg) no-repeat transparent;
   background-size: cover;
   background-position: left top;
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
 
   img {
     display: none;
@@ -73,8 +76,8 @@ img {
 }
 
 .text {
-  width: calc(100% - 285px);
-  padding: 33px 40px 37px;
+  width: calc(100% - 284px);
+  padding: 32px 40px 30px;
 }
 
 .misc-info {
@@ -82,8 +85,9 @@ img {
   flex-direction: row;
   align-items: center;
   position: relative;
+  margin: 20px 0 0;
 
-  img {
+  > img {
     width: 40px;
     height: auto;
     border-radius: 50%;
@@ -107,6 +111,25 @@ img {
     margin-left: auto;
     border-radius: 50%;
   }
+}
+
+.sharePopout {
+    position: absolute;
+    background: $darkblue;
+    width: 248px;
+    padding: 18px 36px 14px 38px;
+    right: -107px;
+    bottom: 65px;
+    border-radius: $radius;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      letter-spacing: 5px;
+      color: $white;
+    }
 }
 
 .attribution { 
