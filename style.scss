@@ -39,6 +39,11 @@ h1 {
   // color: $darkblue;
   // color: $greyblue;
   // color: $lightblue;
+
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 p {
@@ -51,15 +56,20 @@ img {
   height: auto;
 }
 
-
 #card {
-  width: 730px;
+  width: 100%;
+  max-width: 730px;
   display: flex;
   flex-direction: row;
   flex-wrap: no-wrap;
   align-items: stretch;
   border-radius: $radius;
   background: $white;
+
+  @media screen and (max-width: 767px) {
+    width: 87%;
+    flex-direction: column;
+  }
 }
 
 .image {
@@ -73,11 +83,22 @@ img {
   img {
     display: none;
   }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    height: 200px;
+    border-radius: $radius;
+  }
 }
 
 .text {
   width: calc(100% - 284px);
   padding: 32px 40px 30px;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding: 36px 33px;
+  }
 }
 
 .misc-info {
@@ -119,16 +140,39 @@ img {
     width: 248px;
     padding: 18px 36px 14px 38px;
     right: -107px;
-    bottom: 65px;
+    bottom: 0;
     border-radius: $radius;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    transition: 0.3s ease;
+    opacity: 0;
+    transform: scale(0);
+
+    &.show {
+      transform: scale(1);
+      opacity: 1;
+      bottom: 65px;
+    }
 
     span {
       letter-spacing: 5px;
       color: $white;
+    }
+
+    .point {
+      background: #6d7f97;
+      padding: 16px;
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-width: 10px;
+      z-index: -1;
+      margin: 0 auto;
+      transform: rotate(45deg);
     }
 }
 

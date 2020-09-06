@@ -1,8 +1,8 @@
 $( document ).ready(function() {
     
-    $(".sharePopout").hide();
+    $(".sharePopout").removeClass('show');
 
     $("a.share").click(function () {
-    	$(".sharePopout").toggle(200);
+    	$(".sharePopout").toggleClass('show');
     })
 });
