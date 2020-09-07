@@ -134,7 +134,7 @@ img {
 
   a.share {
     font-size: 0;
-    clear: transparent;
+    color: transparent;
     padding: 15px;
     background: url(images/icon-share.svg) no-repeat $lightblue;
     background-position: 50%;
@@ -177,6 +177,7 @@ img {
     &.show {
       transform: scale(1);
       opacity: 1;
+
 
       @media screen and (max-width: 767px) {
         bottom: 0;
