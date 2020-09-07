@@ -1,9 +1,2 @@
 .DS_Store
 node_modules/
-design/
-images/
-gulpfile.js
-package.json
-package-lock.json
-style-guide.md
-style.css.map
